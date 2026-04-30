@@ -91,7 +91,7 @@ export const Hero = () => {
             </Reveal>
           </div>
 
-          <Reveal delay={320}>
+          <Reveal delay={320} className="hidden lg:block">
             <div className="relative mx-auto w-full max-w-[340px]">
               <div className="absolute inset-0 -translate-x-3 -translate-y-3 rounded-full border border-accent/20 bg-accent/10 blur-2xl" />
               <div className="relative overflow-hidden rounded-full border-4 border-border bg-surface shadow-[0_35px_75px_-45px_rgba(15,23,42,0.9)]">
