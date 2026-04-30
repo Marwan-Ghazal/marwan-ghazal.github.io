@@ -190,90 +190,62 @@ const ProjectCard = ({ project }: { project: Project }) => {
   return (
     <Reveal>
       <article
-        className={`group relative border border-border rounded-md overflow-hidden bg-surface transition-colors hover:border-border-strong ${
-          isFeatured ? "md:p-2" : ""
-        }`}
+        className={`group relative border border-border rounded-md overflow-hidden bg-surface transition-colors hover:border-border-strong`}
       >
         {isFeatured && (
-          <div className="absolute top-4 left-4 z-10 font-mono text-[10px] uppercase tracking-[0.2em] text-accent border border-accent/40 bg-accent/10 px-2 py-1 rounded-sm">
+          <div className="absolute top-4 right-4 z-10 font-mono text-[10px] uppercase tracking-[0.2em] text-accent border border-accent/40 bg-accent/10 px-2 py-1 rounded-sm">
             ★ Featured Project
           </div>
         )}
-        <div className={`grid md:grid-cols-12 gap-0 ${isFeatured ? "md:gap-2" : ""}`}>
-          {/* Visual */}
-          <div
-            className={`md:col-span-6 aspect-[16/10] md:aspect-auto md:min-h-[340px] bg-background border-b md:border-b-0 md:border-r border-border relative ${
-              isFeatured ? "md:rounded-sm md:border" : ""
-            }`}
-          >
-            <div
-              aria-hidden
-              className="absolute inset-0 opacity-40"
-              style={{
-                backgroundImage:
-                  "radial-gradient(circle at 30% 20%, hsl(var(--accent) / 0.08), transparent 60%)",
-              }}
-            />
-            <div className="relative h-full w-full p-4 md:p-6 flex items-center justify-center">
-              {project.visualType === "diagram" ? (
-                <ArchitectureDiagram />
-              ) : (
-                <ScreenshotMock title={`${project.title.toLowerCase().replace(/\s+/g, "-")}.app`} />
-              )}
-            </div>
+        <div className="p-6 md:p-10 flex flex-col">
+          <div className="flex items-center justify-between mb-4">
+            <span className="font-mono text-xs text-label">{project.number}</span>
+            {project.status && (
+              <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground border border-border px-2 py-1 rounded-sm">
+                <span
+                  className={`inline-block h-1.5 w-1.5 rounded-full mr-2 align-middle ${
+                    project.status === "live"
+                      ? "bg-accent"
+                      : project.status === "in-progress"
+                      ? "bg-yellow-500"
+                      : "bg-muted-foreground"
+                  }`}
+                />
+                {statusLabel[project.status]}
+              </span>
+            )}
           </div>
 
-          {/* Body */}
-          <div className="md:col-span-6 p-6 md:p-10 flex flex-col">
-            <div className="flex items-center justify-between mb-4">
-              <span className="font-mono text-xs text-label">{project.number}</span>
-              {project.status && (
-                <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground border border-border px-2 py-1 rounded-sm">
-                  <span
-                    className={`inline-block h-1.5 w-1.5 rounded-full mr-2 align-middle ${
-                      project.status === "live"
-                        ? "bg-accent"
-                        : project.status === "in-progress"
-                        ? "bg-yellow-500"
-                        : "bg-muted-foreground"
-                    }`}
-                  />
-                  {statusLabel[project.status]}
-                </span>
-              )}
-            </div>
+          <h3 className={`${isFeatured ? "text-3xl md:text-4xl" : "text-2xl md:text-3xl"} font-medium tracking-tight mb-3`}>
+            {project.title}
+          </h3>
+          <p className="text-muted-foreground mb-5 leading-snug">{project.tagline}</p>
 
-            <h3 className={`${isFeatured ? "text-3xl md:text-4xl" : "text-2xl md:text-3xl"} font-medium tracking-tight mb-3`}>
-              {project.title}
-            </h3>
-            <p className="text-muted-foreground mb-5 leading-snug">{project.tagline}</p>
+          <p className="text-sm text-muted-foreground leading-relaxed mb-6">{project.body}</p>
 
-            <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-1">{project.body}</p>
+          <div className="flex flex-wrap gap-1.5 mb-6">
+            {project.stack.map((t) => (
+              <span
+                key={t}
+                className="font-mono text-[10px] uppercase tracking-[0.12em] text-muted-foreground border border-border px-2 py-1 rounded-sm"
+              >
+                {t}
+              </span>
+            ))}
+          </div>
 
-            <div className="flex flex-wrap gap-1.5 mb-6">
-              {project.stack.map((t) => (
-                <span
-                  key={t}
-                  className="font-mono text-[10px] uppercase tracking-[0.12em] text-muted-foreground border border-border px-2 py-1 rounded-sm"
-                >
-                  {t}
-                </span>
-              ))}
-            </div>
-
-            <div className="flex items-center justify-between pt-5 border-t border-border">
-              <span className="font-mono text-xs text-label">{project.role}</span>
-              {project.github && (
-                <a
-                  href={project.github}
-                  className="inline-flex items-center gap-1.5 font-mono text-xs text-foreground hover:text-accent transition-colors"
-                >
-                  <Github className="h-3.5 w-3.5" />
-                  Repo
-                  <ArrowUpRight className="h-3 w-3" />
-                </a>
-              )}
-            </div>
+          <div className="flex items-center justify-between pt-5 border-t border-border">
+            <span className="font-mono text-xs text-label">{project.role}</span>
+            {project.github && (
+              <a
+                href={project.github}
+                className="inline-flex items-center gap-1.5 font-mono text-xs text-foreground hover:text-accent transition-colors"
+              >
+                <Github className="h-3.5 w-3.5" />
+                Repo
+                <ArrowUpRight className="h-3 w-3" />
+              </a>
+            )}
           </div>
         </div>
       </article>
