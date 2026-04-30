@@ -46,14 +46,14 @@ export const Nav = () => {
       }`}
     >
       <div className="container flex items-center justify-between h-16">
-        <a href="#top" className="flex items-center gap-3 font-mono text-sm tracking-tight text-foreground">
+        <a href="#top" className="flex items-center gap-2 font-mono text-sm tracking-tight text-foreground">
           <img
             src={theme === "dark" ? "/Dark-Logo.png" : "/Light-Logo.png"}
             alt="Marwan Ghazal logo"
-            className="h-9 w-9 object-contain"
+            className="h-20 w-20 object-contain"
           />
           <span className="text-base font-medium">
-            marwan<span className="text-accent">.</span>ghazal
+            Marwan<span className="text-accent">.</span>Ghazal
           </span>
         </a>
         <nav className="hidden md:flex items-center gap-8">
