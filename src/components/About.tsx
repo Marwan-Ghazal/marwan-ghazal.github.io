@@ -3,12 +3,12 @@ import { SectionHeader } from "./SectionHeader";
 
 export const About = () => {
   return (
-    <section id="about" className="py-24 md:py-32">
+    <section id="about" className="py-20 md:py-24">
       <div className="container max-w-5xl">
         <SectionHeader number="01" title="About" caption="WHO I AM" />
 
-        <div className="space-y-10 md:space-y-16">
-          <Reveal className="space-y-6 text-lg md:text-xl leading-relaxed text-muted-foreground">
+        <div className="space-y-8 md:space-y-12">
+          <Reveal className="space-y-5 text-lg md:text-xl leading-relaxed text-muted-foreground">
             <p>
               I'm an AI undergraduate at Nile University focused on the part of applied AI that doesn't fit on a slide:
               the data pipeline that handles real input, the model choices that survive contact with messy data, and the
@@ -27,14 +27,14 @@ export const About = () => {
           </Reveal>
 
           <Reveal delay={120}>
-            <div className="rounded-3xl border border-border/70 bg-muted/10 p-6 shadow-sm shadow-border/10">
-              <div className="border-l-2 border-accent pl-5 pb-4">
+            <div className="rounded-3xl border border-border/70 bg-muted/10 p-5 shadow-sm shadow-border/10">
+              <div className="border-l-2 border-accent pl-5 pb-3">
                 <p className="text-xl md:text-2xl font-medium tracking-tight text-foreground leading-snug">
                   "I don't stop at notebooks, I ship."
                 </p>
               </div>
 
-              <dl className="font-mono text-sm md:text-base space-y-3 border-t border-border pt-6 mt-6">
+              <dl className="font-mono text-sm md:text-base space-y-3 border-t border-border pt-4 mt-4">
                 {[
                   ["GPA", "4.0 / 4.0 (President's Honor, Spring 2025)"],
                   ["EXPECTED", "2027"],
