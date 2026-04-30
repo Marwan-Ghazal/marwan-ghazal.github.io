@@ -29,7 +29,7 @@ export const Hero = () => {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-accent" />
             </span>
             <span className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
-              Available for internships · 2026
+              Portfolio · 2026
             </span>
           </div>
         </Reveal>
@@ -42,16 +42,16 @@ export const Hero = () => {
 
         <Reveal delay={160}>
           <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl leading-snug font-light mb-8">
-            I build production AI for messy real-world inputs —{" "}
-            <span className="text-foreground">clinical EEG recordings</span>,{" "}
-            <span className="text-foreground">Arabic documents</span>,{" "}
-            <span className="text-foreground">nutrition labels</span> — and turn them into reliable, structured systems.
+            AI Engineering Student working across{" "}
+            <span className="text-foreground">LLMs</span>,{" "}
+            <span className="text-foreground">computer vision</span>, and{" "}
+            <span className="text-foreground">end-to-end ML systems</span>, from data pipelines through deployment.
           </p>
         </Reveal>
 
         <Reveal delay={220}>
           <p className="font-mono text-sm text-muted-foreground mb-12 max-w-2xl">
-            AI undergraduate at Nile University · Building applied AI systems end-to-end.
+            Junior BSc. in Artificial Intelligence at Nile University (GPA 4.0/4.0, President's Honor). I design and ship systems that turn messy real-world inputs (EEG recordings, Arabic documents, nutrition labels, CVs) into reliable, structured outputs.
           </p>
         </Reveal>
 
@@ -65,14 +65,16 @@ export const Hero = () => {
               <ArrowDown className="h-3.5 w-3.5 transition-transform group-hover:translate-y-0.5" />
             </a>
             <a
-              href="#"
+              href="/src/assets/Marwan_Ghazal_CV.pdf"
+              download
               className="inline-flex items-center gap-2 px-5 py-3 border border-border-strong text-foreground font-mono text-xs uppercase tracking-[0.18em] rounded-sm hover:border-foreground transition-colors"
             >
               <Download className="h-3.5 w-3.5" />
               Download CV
             </a>
             <a
-              href="#"
+              href="/src/assets/Marwan_Ghazal_Cover_Letter.pdf"
+              download
               className="inline-flex items-center gap-2 px-5 py-3 border border-border text-muted-foreground font-mono text-xs uppercase tracking-[0.18em] rounded-sm hover:text-foreground hover:border-border-strong transition-colors"
             >
               <FileText className="h-3.5 w-3.5" />
