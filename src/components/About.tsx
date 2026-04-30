@@ -5,44 +5,49 @@ export const About = () => {
   return (
     <section id="about" className="py-24 md:py-32">
       <div className="container max-w-5xl">
-        <SectionHeader number="01" title="About" caption="Who I am" />
+        <SectionHeader number="01" title="About" caption="WHO I AM" />
 
-        <div className="grid md:grid-cols-12 gap-10 md:gap-16">
-          <Reveal className="md:col-span-7 space-y-6 text-lg leading-relaxed text-muted-foreground">
+        <div className="space-y-10 md:space-y-16">
+          <Reveal className="space-y-6 text-lg md:text-xl leading-relaxed text-muted-foreground">
             <p>
-              I'm an AI/ML undergraduate at Nile University focused on the unglamorous middle of applied AI:
-              taking messy, real-world signals and shaping them into systems that actually run in production.
-              My work spans clinical EEG analysis, Arabic OCR pipelines, and nutrition-label understanding —
-              problems where the input is noisy and the output has to be trustworthy.
+              I'm an AI undergraduate at Nile University focused on the part of applied AI that doesn't fit on a slide:
+              the data pipeline that handles real input, the model choices that survive contact with messy data, and the
+              deployment work that turns a notebook into something a real person can use. My work spans clinical EEG
+              analysis, Arabic NLP, OCR pipelines for government documents, and multimodal product classification, domains
+              where the input is noisy, the output has to be trustworthy, and the engineering matters as much as the model.
             </p>
             <p>
-              I care about end-to-end ownership: data pipelines, model selection, evaluation, deployment, and
-              the boring but critical glue in between. I've shipped projects solo, co-built systems during my
-              internship at the National Training Academy, and led teams through hackathons and research
-              competitions across the MENA region.
+              I've shipped systems solo and in teams: a clinical neurofeedback platform I'm building independently with a real
+              industry partner, two production AI systems deployed during my internship at the National Training Academy, a
+              1st-place multimodal research project at Nile University's UGRF, and a 3rd-place Arabic ABSA pipeline at the DeepX
+              2026 hackathon. Outside of building, I serve as Vice Head of PR at Microsoft Student Club at Nile University,
+              after leading PR for the university's E-Club, work that's taught me as much about communicating technical ideas as
+              the engineering itself.
             </p>
           </Reveal>
 
-          <Reveal className="md:col-span-5" delay={120}>
-            <div className="border-l-2 border-accent pl-6 py-2 mb-8">
-              <p className="text-xl md:text-2xl font-medium tracking-tight text-foreground leading-snug">
-                "I don't stop at notebooks — I ship."
-              </p>
-            </div>
+          <Reveal delay={120}>
+            <div className="rounded-3xl border border-border/70 bg-muted/10 p-6 shadow-sm shadow-border/10">
+              <div className="border-l-2 border-accent pl-5 pb-4">
+                <p className="text-xl md:text-2xl font-medium tracking-tight text-foreground leading-snug">
+                  "I don't stop at notebooks, I ship."
+                </p>
+              </div>
 
-            <dl className="font-mono text-xs space-y-3 border-t border-border pt-6">
-              {[
-                ["GPA", "3.85 / 4.0"],
-                ["Expected", "Spring 2027"],
-                ["Location", "Sheikh Zayed, EG"],
-                ["Focus", "Applied AI · LLMs · Signals"],
-              ].map(([k, v]) => (
-                <div key={k} className="flex justify-between gap-4">
-                  <dt className="uppercase tracking-[0.18em] text-label">{k}</dt>
-                  <dd className="text-foreground text-right">{v}</dd>
-                </div>
-              ))}
-            </dl>
+              <dl className="font-mono text-sm md:text-base space-y-3 border-t border-border pt-6 mt-6">
+                {[
+                  ["GPA", "4.0 / 4.0 (President's Honor, Spring 2025)"],
+                  ["EXPECTED", "2027"],
+                  ["LOCATION", "Sheikh Zayed, EG"],
+                  ["FOCUS", "Applied AI · LLMs · Production Systems"],
+                ].map(([k, v]) => (
+                  <div key={k} className="flex justify-between gap-4">
+                    <dt className="uppercase tracking-[0.18em] text-label text-[0.75rem] md:text-sm">{k}</dt>
+                    <dd className="text-foreground text-right text-sm md:text-base">{v}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
           </Reveal>
         </div>
       </div>

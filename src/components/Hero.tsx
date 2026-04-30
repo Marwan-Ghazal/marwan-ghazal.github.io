@@ -41,17 +41,14 @@ export const Hero = () => {
         </Reveal>
 
         <Reveal delay={160}>
-          <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl leading-snug font-light mb-8">
-            AI Engineering Student working across{" "}
-            <span className="text-foreground">LLMs</span>,{" "}
-            <span className="text-foreground">computer vision</span>, and{" "}
-            <span className="text-foreground">end-to-end ML systems</span>, from data pipelines through deployment.
+          <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl leading-snug font-dark mb-8">
+            AI Engineering Student working across LLMs, computer vision, and end-to-end ML systems, from data pipelines through deployment.
           </p>
         </Reveal>
 
         <Reveal delay={220}>
           <p className="font-mono text-sm text-muted-foreground mb-12 max-w-2xl">
-            Junior BSc. in Artificial Intelligence at Nile University (GPA 4.0/4.0, President's Honor). I design and ship systems that turn messy real-world inputs (EEG recordings, Arabic documents, nutrition labels, CVs) into reliable, structured outputs.
+            Junior BSc. in Artificial Intelligence at Nile University (GPA 4.0/4.0). I work as an AI Engineer building production systems with deep learning, LLMs, RAG, and structured-output pipelines.
           </p>
         </Reveal>
 
@@ -65,7 +62,7 @@ export const Hero = () => {
               <ArrowDown className="h-3.5 w-3.5 transition-transform group-hover:translate-y-0.5" />
             </a>
             <a
-              href="/src/assets/Marwan_Ghazal_CV.pdf"
+              href="/Marwan_Ghazal_CV.pdf"
               download
               className="inline-flex items-center gap-2 px-5 py-3 border border-border-strong text-foreground font-mono text-xs uppercase tracking-[0.18em] rounded-sm hover:border-foreground transition-colors"
             >
@@ -73,12 +70,12 @@ export const Hero = () => {
               Download CV
             </a>
             <a
-              href="/src/assets/Marwan_Ghazal_Cover_Letter.pdf"
+              href="/Marwan_Ghazal_Cover_Letter.pdf"
               download
-              className="inline-flex items-center gap-2 px-5 py-3 border border-border text-muted-foreground font-mono text-xs uppercase tracking-[0.18em] rounded-sm hover:text-foreground hover:border-border-strong transition-colors"
+              className="inline-flex items-center gap-2 px-5 py-3 border border-border-strong text-foreground font-mono text-xs uppercase tracking-[0.18em] rounded-sm hover:border-foreground transition-colors"
             >
-              <FileText className="h-3.5 w-3.5" />
-              Cover Letter
+              <Download className="h-3.5 w-3.5" />
+              Download Cover Letter
             </a>
           </div>
         </Reveal>
