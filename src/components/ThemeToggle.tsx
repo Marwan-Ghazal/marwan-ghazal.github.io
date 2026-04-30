@@ -1,26 +1,11 @@
-import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 
-const STORAGE_KEY = "theme";
+interface ThemeToggleProps {
+  theme: "light" | "dark";
+  toggle: () => void;
+}
 
-const getInitial = (): "light" | "dark" => {
-  if (typeof window === "undefined") return "light";
-  const stored = localStorage.getItem(STORAGE_KEY);
-  if (stored === "light" || stored === "dark") return stored;
-  return "light";
-};
-
-export const ThemeToggle = () => {
-  const [theme, setTheme] = useState<"light" | "dark">(getInitial);
-
-  useEffect(() => {
-    const root = document.documentElement;
-    root.classList.toggle("dark", theme === "dark");
-    localStorage.setItem(STORAGE_KEY, theme);
-  }, [theme]);
-
-  const toggle = () => setTheme((t) => (t === "dark" ? "light" : "dark"));
-
+export const ThemeToggle = ({ theme, toggle }: ThemeToggleProps) => {
   return (
     <button
       type="button"

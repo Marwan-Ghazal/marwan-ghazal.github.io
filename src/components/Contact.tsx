@@ -3,10 +3,10 @@ import { Reveal } from "./Reveal";
 import { SectionHeader } from "./SectionHeader";
 
 const channels = [
-  { icon: Mail, label: "Email", value: "marwan.ghazal@nu.edu.eg", href: "mailto:marwan.ghazal@nu.edu.eg" },
-  { icon: Github, label: "GitHub", value: "github.com/marwanghazal", href: "https://github.com/" },
-  { icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/marwanghazal", href: "https://linkedin.com/" },
-  { icon: Phone, label: "Phone", value: "+20 ··· ··· ····", href: "tel:+20" },
+  { icon: Mail, label: "EMAIL", value: "marwanghazal002y@gmail.com", href: "mailto:marwanghazal002y@gmail.com" },
+  { icon: Github, label: "GITHUB", value: "github.com/Marwan-Ghazal", href: "https://github.com/Marwan-Ghazal" },
+  { icon: Linkedin, label: "LINKEDIN", value: "linkedin.com/in/marwan-ghazal-9690ba33a/", href: "https://www.linkedin.com/in/marwan-ghazal-9690ba33a/" },
+  { icon: Phone, label: "PHONE", value: "+20 101 651 1889", href: "tel:+201016511889" },
 ];
 
 export const Contact = () => {
@@ -18,11 +18,11 @@ export const Contact = () => {
         style={{ background: "hsl(var(--accent))" }}
       />
       <div className="container max-w-5xl relative">
-        <SectionHeader number="05" title="Let's build something." caption="Get in touch" />
-
+<SectionHeader number="05" title="Let's Talk" caption="GET IN TOUCH" />
+        
         <Reveal>
           <p className="text-2xl md:text-4xl font-medium tracking-tight leading-tight max-w-3xl mb-12">
-            Open to internships and AI engineering collaborations across MENA and remote.
+            Open to AI/ML internships, applied AI roles, and interesting collaborations. Based in Sheikh Zayed, Egypt — happy to work remotely or relocate.
           </p>
         </Reveal>
 
@@ -49,20 +49,25 @@ export const Contact = () => {
         </div>
 
         <Reveal>
+          <p className="mb-6 text-sm text-muted-foreground max-w-2xl">
+            Download my CV or cover letter for a closer look.
+          </p>
           <div className="flex flex-wrap gap-3">
             <a
-              href="#"
+              href="/Marwan_Ghazal_CV.pdf"
+              download
               className="inline-flex items-center gap-2 px-5 py-3 bg-foreground text-background font-mono text-xs uppercase tracking-[0.18em] rounded-sm hover:bg-accent hover:text-accent-foreground transition-colors"
             >
               <Download className="h-3.5 w-3.5" />
-              Download CV
+              Download CV ↓
             </a>
             <a
-              href="#"
+              href="/Marwan_Ghazal_Cover_Letter.pdf"
+              download
               className="inline-flex items-center gap-2 px-5 py-3 border border-border-strong text-foreground font-mono text-xs uppercase tracking-[0.18em] rounded-sm hover:border-foreground transition-colors"
             >
               <FileText className="h-3.5 w-3.5" />
-              Cover Letter
+              Download Cover Letter ↓
             </a>
           </div>
         </Reveal>
@@ -74,12 +79,9 @@ export const Contact = () => {
 export const Footer = () => (
   <footer className="border-t border-border py-10">
     <div className="container flex flex-col md:flex-row items-start md:items-center justify-between gap-4 font-mono text-xs text-muted-foreground">
-      <span>© 2026 Marwan Ghazal. All rights reserved.</span>
+      <span>© 2026 Marwan Ghazal · Built with React + Vite · Sheikh Zayed, Egypt</span>
       <div className="flex items-center gap-6">
         <span>Built with React + Vite</span>
-        <a href="#" className="hover:text-foreground transition-colors inline-flex items-center gap-1">
-          <Github className="h-3 w-3" /> source
-        </a>
       </div>
     </div>
   </footer>

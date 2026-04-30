@@ -3,24 +3,50 @@ import { SectionHeader } from "./SectionHeader";
 
 const groups = [
   {
-    label: "Languages",
-    items: ["Python", "TypeScript", "C++", "SQL", "Bash"],
+    label: "LANGUAGES",
+    items: ["Python", "JavaScript", "SQL"],
   },
   {
-    label: "ML & Deep Learning",
-    items: ["PyTorch", "TensorFlow", "scikit-learn", "ONNX", "MNE-Python", "OpenCV", "YOLOv8"],
+    label: "ML & DEEP LEARNING",
+    items: [
+      "PyTorch",
+      "TensorFlow",
+      "Keras",
+      "scikit-learn",
+      "XGBoost",
+      "Transformers (Hugging Face)",
+      "LoRA / Fine-Tuning",
+      "Multimodal Fusion",
+      "CNNs",
+      "RNNs / LSTMs",
+    ],
   },
   {
     label: "LLMs & RAG",
-    items: ["LangChain", "LlamaIndex", "vLLM", "Qwen2.5", "BGE-M3", "Qdrant", "Cohere Rerank"],
+    items: [
+      "OpenAI API",
+      "Gemini API",
+      "Claude API",
+      "Locally hosted Llama-family models",
+      "Prompt engineering (system prompts, schema-based JSON outputs)",
+      "Embeddings",
+      "Vector search (pgvector, Chroma)",
+      "Hybrid retrieval",
+      "Cross-encoder reranking",
+      "Agentic RAG",
+    ],
   },
   {
-    label: "Backend & APIs",
-    items: ["FastAPI", "Node.js", "PostgreSQL", "Redis", "Docker", "Nginx"],
+    label: "BACKEND & APIS",
+    items: ["FastAPI", "Flask", "REST", "JSON", "async SQLAlchemy", "Pydantic"],
   },
   {
-    label: "Data & Tools",
-    items: ["Pandas", "NumPy", "Polars", "DuckDB", "W&B", "Git", "Linux"],
+    label: "DATA & TOOLS",
+    items: ["PostgreSQL", "MySQL", "Supabase", "Pandas", "NumPy", "OpenCV", "Tesseract", "Git / GitHub"],
+  },
+  {
+    label: "DEV ENVIRONMENT",
+    items: ["Cursor", "Windsurf", "Claude Code", "Copilot"],
   },
 ];
 
@@ -28,7 +54,7 @@ export const Skills = () => {
   return (
     <section id="skills" className="py-24 md:py-32 border-t border-border">
       <div className="container max-w-5xl">
-        <SectionHeader number="04" title="Toolkit" caption="What I work with" />
+        <SectionHeader number="04" title="Skills" caption="STACK" />
         <div className="space-y-10">
           {groups.map((g, i) => (
             <Reveal key={g.label} delay={i * 60}>

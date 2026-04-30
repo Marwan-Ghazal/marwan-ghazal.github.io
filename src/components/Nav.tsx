@@ -8,8 +8,27 @@ const links = [
   { href: "#contact", label: "Contact" },
 ];
 
+const STORAGE_KEY = "theme";
+
+const getInitialTheme = (): "light" | "dark" => {
+  if (typeof window === "undefined") return "light";
+  const stored = localStorage.getItem(STORAGE_KEY);
+  return stored === "dark" ? "dark" : "light";
+};
+
 export const Nav = () => {
+  const [theme, setTheme] = useState<"light" | "dark">("light");
   const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    setTheme(getInitialTheme());
+  }, []);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    root.classList.toggle("dark", theme === "dark");
+    localStorage.setItem(STORAGE_KEY, theme);
+  }, [theme]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -27,8 +46,15 @@ export const Nav = () => {
       }`}
     >
       <div className="container flex items-center justify-between h-16">
-        <a href="#top" className="font-mono text-sm tracking-tight text-foreground">
-          marwan<span className="text-accent">.</span>ghazal
+        <a href="#top" className="flex items-center gap-3 font-mono text-sm tracking-tight text-foreground">
+          <img
+            src={theme === "dark" ? "/Dark-Logo.png" : "/Light-Logo.png"}
+            alt="Marwan Ghazal logo"
+            className="h-9 w-9 object-contain"
+          />
+          <span className="text-base font-medium">
+            marwan<span className="text-accent">.</span>ghazal
+          </span>
         </a>
         <nav className="hidden md:flex items-center gap-8">
           {links.map((l) => (
@@ -40,10 +66,10 @@ export const Nav = () => {
               {l.label}
             </a>
           ))}
-          <ThemeToggle />
+          <ThemeToggle theme={theme} toggle={() => setTheme((t) => (t === "dark" ? "light" : "dark"))} />
         </nav>
         <div className="md:hidden flex items-center gap-3">
-          <ThemeToggle />
+          <ThemeToggle theme={theme} toggle={() => setTheme((t) => (t === "dark" ? "light" : "dark"))} />
           <a
             href="#contact"
             className="font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground hover:text-foreground"
